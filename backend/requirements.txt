@@ -1,0 +1,11 @@
+Django==5.2.12
+djangorestframework
+djangorestframework-simplejwt
+psycopg2
+pillow
+django-cors-headers
+python-dotenv
+django-filter
+gunicorn
+whitenoise
+dj-database-url

@@ -1,0 +1,48 @@
+name: livestock_app
+description: A new Flutter project for Livestock Market (OLX clone)
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # State Management & Routing
+  get: ^4.6.6
+
+  # Networking
+  dio: ^5.4.0
+  
+  # Local Storage
+  shared_preferences: ^2.2.2
+  
+  # UI & Animations
+  shimmer: ^3.0.0       # Loading shimmer effect
+  cached_network_image: ^3.3.1 # Image caching
+  font_awesome_flutter: ^10.7.0 # Icons
+
+  # Forms
+  image_picker: ^1.0.4  # File picking
+
+  # Utils
+  intl: ^0.19.0         # Date formatting
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  
+  # fonts:
+  #   - family: Inter
+  #     fonts:
+  #       - asset: assets/fonts/Inter-Regular.ttf
+  #       - asset: assets/fonts/Inter-Bold.ttf
+  #         weight: 700
