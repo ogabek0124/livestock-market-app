@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_filters',
 
+    # Swagger API Docs
+    'drf_yasg',
+
     # Local apps
     'apps.users',
     'apps.categories',
