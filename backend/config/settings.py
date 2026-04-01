@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'django_filters',
 
     # Swagger API Docs
-    'drf_yasg',
+    'drf_spectacular',
 
     # Local apps
     'apps.users',
@@ -166,6 +166,14 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Livestock Market API',
+    'DESCRIPTION': 'API endpoints for Livestock Market application',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
 }
 
 SIMPLE_JWT = {

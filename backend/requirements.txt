@@ -9,4 +9,4 @@ django-filter
 gunicorn
 whitenoise
 dj-database-url
-drf-yasg
+drf-spectacular
