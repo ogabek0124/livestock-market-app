@@ -2,6 +2,9 @@ from rest_framework import viewsets
 from .models import Category
 from .serializers import CategorySerializer
 
+from drf_spectacular.utils import extend_schema
+
+@extend_schema(tags=['Categories'])
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer

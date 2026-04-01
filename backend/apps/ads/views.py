@@ -6,6 +6,9 @@ from .serializers import AdSerializer
 from .filters import AdFilter
 from config.permissions import IsOwnerOrReadOnly
 
+from drf_spectacular.utils import extend_schema
+
+@extend_schema(tags=['Ads'])
 class AdViewSet(viewsets.ModelViewSet):
     queryset = Ad.objects.select_related('user', 'category').all()
     serializer_class = AdSerializer

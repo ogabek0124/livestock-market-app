@@ -3,6 +3,9 @@ from .models import Favorite
 from .serializers import FavoriteSerializer
 from config.permissions import IsOwner
 
+from drf_spectacular.utils import extend_schema
+
+@extend_schema(tags=['Favorites'])
 class FavoriteViewSet(viewsets.ModelViewSet):
     serializer_class = FavoriteSerializer
     permission_classes = [permissions.IsAuthenticated, IsOwner]

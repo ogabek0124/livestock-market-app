@@ -5,9 +5,13 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from .serializers import CustomTokenObtainPairSerializer, UserSerializer
 
 
+from drf_spectacular.utils import extend_schema
+
+@extend_schema(tags=['Authentication'])
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
 
+@extend_schema(tags=['Authentication'])
 class RegisterView(APIView):
     permission_classes = (permissions.AllowAny,)
     
@@ -18,6 +22,7 @@ class RegisterView(APIView):
             return Response(UserSerializer(user).data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@extend_schema(tags=['Authentication'])
 class CurrentUserView(APIView):
     permission_classes = (permissions.IsAuthenticated,)
 

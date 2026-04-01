@@ -174,6 +174,27 @@ SPECTACULAR_SETTINGS = {
     'DESCRIPTION': 'API endpoints for Livestock Market application',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
+    'COMPONENT_SPLIT_PATCH': True,
+    'COMPONENT_SPLIT_REQUEST': True,
+    'SWAGGER_UI_SETTINGS': {
+        'deepLinking': True,
+        'displayOperationId': True,
+        'defaultModelsExpandDepth': -1,
+        'persistAuthorization': True,
+        'displayRequestDuration': True,
+    },
+    'SECURITY': [{
+        'jwtAuth': [],
+    }],
+    'APPEND_COMPONENTS': {
+        'securitySchemes': {
+            'jwtAuth': {
+                'type': 'http',
+                'scheme': 'bearer',
+                'bearerFormat': 'JWT',
+            }
+        }
+    },
 }
 
 SIMPLE_JWT = {
