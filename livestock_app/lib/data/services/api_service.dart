@@ -2,9 +2,11 @@ import 'package:dio/dio.dart';
 import '../models/ad_model.dart';
 
 class ApiService {
-  // Update this to your deployed Render URL:
+  // Use 10.0.2.2 for Android Emulator, 127.0.0.1 for iOS/Web
+  static const String _localBaseUrl = 'http://10.0.2.2:8000/api/v1'; // OR 'http://127.0.0.1:8000/api/v1'
+  
   final Dio _dio = Dio(BaseOptions(
-    baseUrl: 'https://yor-render-app.onrender.com/api/v1', 
+    baseUrl: _localBaseUrl, 
     connectTimeout: const Duration(seconds: 10),
     receiveTimeout: const Duration(seconds: 10),
   ));
