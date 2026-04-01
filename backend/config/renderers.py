@@ -4,6 +4,11 @@ class CustomJSONRenderer(JSONRenderer):
     def render(self, data, accepted_media_type=None, renderer_context=None):
         response = renderer_context.get('response') if renderer_context else None
         
+        # Check if we are rendering a Swagger/OpenAPI schema
+        # Typically schemas contain 'openapi', 'swagger', or 'info' keys at the root
+        if isinstance(data, dict) and any(key in data for key in ['openapi', 'swagger', 'info']):
+            return super().render(data, accepted_media_type, renderer_context)
+
         status_code = response.status_code if response else 200
         
         if status_code >= 400:
